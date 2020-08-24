@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="card text-center">
+        <div class="card-header text-white bg-secondary">
+            <h1 id="header">Weather Dashboard</h1>
+        </div>
+        <!-- Search Box on Left with results -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-left">Search for a City:</h4>
+                        <form class="form-inline">
+                            <input id="search-text" class="form-control col-md 4" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button id="search-button" class="btn btn-outline-secondary my-2 my-sm-0"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="history" class="card text-left">History:
+                    <ul id="search" class="list-group text-left list-group-flush">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="card">
+                    <!-- Card on the right displaying current city information -->
+                    <div class="card-body text-left">
+                        <h3>Current Weather Info:</h3>
+                        <h4 class="info">City: <span id="city"></span></h4>
+                        <h5 class="info">Temperature: <span id="temperature"></span></h5>
+                        <h5 class="info">Humidity: <span id="humidity"></span></h5>
+                        <h5 class="info">Wind Speed: <span id="wind-speed"></span></h5>
+                        <h5 class="info">UV Index: <span id="uv-index"></span></h5>
+                    </div>
+                    <!-- Cards on the right below the current that show the 5 day forecast -->
+                </div>
+            </div>
+            <div class="col-sm-8 offset-sm-4">
+                <div class="card">
+                    <!-- Cards on the right below the curren that show the 5 day forecast -->
+                    <div class="card-body text-left">
+                        <h3>5 Day Forecast</h3>
+                        <div id="forecast" class="card-deck"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/script.js"></script>
+</body>
+
+</html>
