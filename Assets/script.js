@@ -32,15 +32,19 @@
                     url: queryURLuv,
                     method: "GET"
                 }).then(function (uv) {
-                    $('#uv-index').text(uv.value);
-                    if (uv.value >= 3 && uv.value <= 5) {
+
+                    uvIndex = parseInt(uv.value);
+                    $('#uv-index').text(uvIndex);
+                    if (uvIndex >= 3 && uvIndex <= 5) {
                         $('#uv-index').css('background-color', 'yellow');
-                    } else if (uv.value >= 6 && uv.value <= 7) {
+                    } else if (uvIndex >= 6 && uvIndex <= 7) {
                         $('#uv-index').css('background-color', 'orange');
-                    } else if (uv.value >= 8 && uv.value <= 10) {
+                    } else if (uvIndex >= 8 && uvIndex <= 10) {
                         $('#uv-index').css('background-color', 'red');
-                    } else if (uv.value >= 11)
+                    } else if (uvIndex >= 11) {
                         $('#uv-index').css('background-color', 'violet');
+                    }
+                
                 });
 
                 if (weather.weather[0].main === 'Clear') {
@@ -51,7 +55,7 @@
                     var imgURLcurrent = 'Assets/icons/cloud2.png';
                 };
 
-                $('#city').text(weather.name + ' ' + moment().format('MMMM Do YYYY'));
+                $('#city').text(weather.name + ' - ' + moment().format('MMMM Do YYYY') + ' ');
                 var currentIcon = $('<img>').attr('src', imgURLcurrent).attr('alt', 'icon').addClass('icon');
                 $('#city').append(currentIcon);
 
